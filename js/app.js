@@ -26,7 +26,12 @@ async function openCategory(event, categoryId) {
   });
   event.target.className += ' active';
   if (categoryData.length === 0) {
-    tabContent.innerHTML = `No data found`;
+    tabContent.innerHTML = `<div class="no-data">
+      <figure>
+        <img src="images/icon.png" alt="No-Data" />
+        <p>Oops!! Sorry, There is no content here</p>
+      </figure>
+    </div>`;
     return;
   }
   renderList(categoryData);
@@ -66,7 +71,6 @@ document.getElementById('sort').addEventListener('click', () => {
   let sortedList = categoryData.sort((v1, v2) => {
     const view1 = parseFloat(v1.others.views);
     const view2 = parseFloat(v2.others.views);
-    console.log(view1, view2);
     if (view1 > view2) return -1;
   });
   renderList(sortedList);

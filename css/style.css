@@ -83,6 +83,10 @@ header .btn {
   color: rgb(var(--active-color));
 }
 
+main {
+  padding-bottom: 8rem;
+}
+
 .tab-content {
   display: grid;
   gap: 1.5rem;
@@ -140,6 +144,45 @@ header .btn {
   width: 19px;
   margin-left: 9px;
 }
+.no-data {
+  grid-column: span 4;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.no-data p {
+  font-size: 2rem;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+
+.blog {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  padding-top: 2rem;
+}
+.blog article {
+  padding: 1rem;
+  border: 1px solid rgba(var(--primary-color), 0.2);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2px 1px rgba(var(--primary-color), 0.7);
+}
+.blog h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+.blog p {
+  font-size: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.blog a {
+  font-size: 1rem;
+  display: inline-block;
+}
 @media (min-width: 576px) {
   body,
   html {
@@ -159,6 +202,9 @@ header .btn {
   }
   .tab-content {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .blog {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 @media (min-width: 1200px) {
