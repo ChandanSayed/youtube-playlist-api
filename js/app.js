@@ -1,6 +1,7 @@
 const tabButtonsContainer = document.querySelector('.tab-btns');
 const tabContent = document.querySelector('.tab-content');
 let tabButtons;
+let categoryData;
 
 window.onload = async function () {
   const categoryDetails = await fetch('https://openapi.programming-hero.com/api/videos/categories');
@@ -13,9 +14,6 @@ window.onload = async function () {
   tabButtons = document.querySelectorAll('.tab-btn');
   tabButtons[0].click();
 };
-
-const currentTime = new Date();
-let categoryData;
 
 async function openCategory(event, categoryId) {
   const categoryResponse = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
